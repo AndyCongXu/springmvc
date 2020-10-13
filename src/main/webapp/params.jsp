@@ -15,6 +15,7 @@
             性别：<input type="text" name="sex" />
             花名：<input type="text" name="subUserInfo.nick" />
             工号：<input type="text" name="subUserInfo.staffId" />
+            生日：<input type="text" name="date" />
             <input type="submit" value="提交">
         </form>
 

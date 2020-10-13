@@ -2,6 +2,7 @@ package com.zion.domain;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -21,6 +22,8 @@ public class UserInfoVO implements Serializable {
     private String sex;
 
     private SubUserInfo subUserInfo;
+
+    private Date date;
 
     /**
      * Getter method for property <tt>name</tt>.
@@ -94,6 +97,24 @@ public class UserInfoVO implements Serializable {
         this.subUserInfo = subUserInfo;
     }
 
+    /**
+     * Getter method for property <tt>date</tt>.
+     *
+     * @return property value of date
+     */
+    public Date getDate() {
+        return date;
+    }
+
+    /**
+     * Setter method for property <tt>counterType</tt>.
+     *
+     * @param date value to be assigned to property date
+     */
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
     @Override
     public String toString() {
         return "UserInfoVO{" +
@@ -101,6 +122,8 @@ public class UserInfoVO implements Serializable {
             ", age='" + age + '\'' +
             ", sex='" + sex + '\'' +
             ", subUserInfo=" + subUserInfo +
+            ", date=" + date +
             '}';
     }
+
 }

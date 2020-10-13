@@ -19,5 +19,10 @@
             <input type="submit" value="提交">
         </form>
 
+        <form action="param/getServletParams" method="post">
+                    姓名：<input type="text" name="name" />
+                    <input type="submit" value="提交">
+        </form>
+
     </body>
 </html>

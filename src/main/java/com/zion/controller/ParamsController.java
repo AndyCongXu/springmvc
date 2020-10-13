@@ -1,5 +1,10 @@
 package com.zion.controller;
 
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import com.zion.domain.UserInfoVO;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -41,4 +46,13 @@ public class ParamsController {
         System.out.println(userInfoVO.toString());
         return "sayHello";
     }
+
+    @RequestMapping(path = "/getServletParams")
+    public String getServletParams(HttpServletRequest request, HttpServletResponse response){
+        HttpSession session = request.getSession();
+        ServletContext servletContext = session.getServletContext();
+        System.out.println(request.getParameter("name"));
+        return "sayHello";
+    }
+
 }

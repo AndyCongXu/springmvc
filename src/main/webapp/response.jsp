@@ -7,5 +7,7 @@
     <body>
         <h3>返回结果测试程序</h3>
         <a href="response/string">string</a>
+
+        <a href="response/void">void</a>
     </body>
 </html>

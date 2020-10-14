@@ -1,5 +1,11 @@
 package com.zion.controller;
 
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import com.zion.domain.UserInfoVO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,5 +36,31 @@ public class ResponseController {
         model.addAttribute("userInfoVO", userInfoVO);
 
         return "result";
+    }
+
+    /**
+     * http://localhost:8080/apply/response/void
+     *
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
+    @RequestMapping(path = "/void")
+    public void getVoidResult(HttpServletRequest request, HttpServletResponse response)
+        throws ServletException, IOException {
+        System.out.println("getVoidResult");
+
+        // 3 种方法任选其一即可
+        // 方法 1：转发请求
+        // request.getRequestDispatcher("/WEB-INF/views/result.jsp").forward(request, response);
+
+        // 方法 2：重定向
+        // response.sendRedirect(request.getContextPath() + "/index.jsp");
+
+        // 方法 3：直接进行相应
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html;charset=UTF-8");
+        response.getWriter().println("void");
     }
 }

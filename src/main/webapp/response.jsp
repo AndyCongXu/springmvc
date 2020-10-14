@@ -9,5 +9,8 @@
         <a href="response/string">string</a>
 
         <a href="response/void">void</a>
+
+        <a href="response/modelAndView">modelAndView</a>
+
     </body>
 </html>

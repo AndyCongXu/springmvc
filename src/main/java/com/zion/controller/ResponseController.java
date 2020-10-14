@@ -2,6 +2,7 @@ package com.zion.controller;
 
 import java.io.IOException;
 
+import javax.jws.soap.SOAPBinding.Use;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,6 +11,7 @@ import com.zion.domain.UserInfoVO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 /**
  * @author jianjiu.xc
@@ -62,5 +64,17 @@ public class ResponseController {
         response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
         response.getWriter().println("void");
+    }
+
+    @RequestMapping(path = "/modelAndView")
+    public ModelAndView getModelAndViewResult(){
+        ModelAndView modelAndView = new ModelAndView();
+        UserInfoVO userInfoVO = new UserInfoVO();
+        userInfoVO.setName("modelAndView");
+        userInfoVO.setAge("1");
+
+        modelAndView.addObject("userInfoVO", userInfoVO);
+        modelAndView.setViewName("result");
+        return modelAndView;
     }
 }
